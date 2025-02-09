@@ -19,13 +19,14 @@ public class CheckingAccount extends Account{
     }
     @Override
     public void withdraw(double a){
-        if (a > 0 ){
+        if (a > 0){
             if (balance - a >= 0){
                 System.out.println(a+" baht is withdrawn from "+name+" and your credit balance is "+credit+".");
                 this.setBalance(balance-a);
             }else if (balance - a + credit >= 0){
+                credit += balance;
+                credit -= a;
                 System.out.println(a+" baht is withdrawn from "+name+" and your credit balance is "+credit+".");
-                this.setCredit(credit + (balance - a));
                 this.setBalance(0);
             }else{
                 System.out.println("Not enough money!");
