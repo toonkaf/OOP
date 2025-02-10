@@ -4,7 +4,7 @@ import javax.swing.*;
 public class CalculatorSample implements ActionListener {
     private double summary = 0;
     private boolean checker = true;
-    private char kept;
+    private char kept = ' ';
     private JFrame frame;
     private JPanel pan;
     private JTextField output;
@@ -144,6 +144,7 @@ public class CalculatorSample implements ActionListener {
         }else{
             output.setText(output.getText() + ((JButton)e.getSource()).getText());
         }
-//        System.out.println(summary);
+        System.out.println(kept);
+        System.out.println(summary);
     }
 }
